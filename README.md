@@ -28,5 +28,5 @@ If you are developing a production application, we recommend updating the config
 
 # Deploy
 - When deploy this project into Azure Web App on Linux:
-   - Set the **Startup Command** as `pm2 serve /home/site/wwwroot/build --no-daemon` at the General settings of the Web App. (Reference: Section **JavaScript Frameworks** of https://azureossd.github.io/2022/02/22/Using-PM2-on-App-Service-Linux/)
+   - Set the **Startup Command** as `pm2 serve /home/site/wwwroot --no-daemon` at the General settings of the Web App. (Reference: Section **JavaScript Frameworks** of https://azureossd.github.io/2022/02/22/Using-PM2-on-App-Service-Linux/)
    - Download the publish profile from Wev App portal and set the Github Action Secret **AZURE_WEBAPP_PUBLISH_PROFILE** as the content of the publish profile
