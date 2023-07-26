@@ -25,3 +25,8 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+# Deploy
+- When deploy this project into Azure Web App on Linux:
+   - Set the **Startup Command** as `pm2 serve /home/site/wwwroot/build --no-daemon` at the General settings of the Web App. (Reference: Section **JavaScript Frameworks** of https://azureossd.github.io/2022/02/22/Using-PM2-on-App-Service-Linux/)
+   - Download the publish profile from Wev App portal and set the Github Action Secret **AZURE_WEBAPP_PUBLISH_PROFILE** as the content of the publish profile
