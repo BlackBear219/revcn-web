@@ -17,6 +17,8 @@ export const useStyles = makeStyles({
     },
     page: {
         height: `calc(100vh - ${navigationBarHeight} - ${rowGap})`,
-        backgroundColor: "grey"
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
     },
 });
