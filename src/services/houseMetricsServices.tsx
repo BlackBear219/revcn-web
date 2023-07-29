@@ -1,5 +1,5 @@
 import axios from "axios";
-import { specialHouseMetricApi, totalHouseMetricApi } from "../constants/revcnApiUrl";
+import { localhost, specialHouseMetricApi, totalHouseMetricApi } from "../constants/revcnApiUrl";
 import { metric, metricType } from "../models/metric";
 import { revcnResponse } from "../models/revcnResponse";
 import { newIllegalResponse } from "../util/newIllegalResponse";
@@ -8,6 +8,7 @@ export const getHouseMetrics = async (metrcType: metricType) : Promise<revcnResp
     try {
         var targetUrl = metrcType === metricType.HOUSE_AMOUNT_SPECIAL ?
             specialHouseMetricApi : totalHouseMetricApi;
+        targetUrl = localhost + targetUrl;
         var response = await axios.get(targetUrl);
         var result = response.data as revcnResponse<metric[]>;
         return result;
