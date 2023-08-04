@@ -6,7 +6,7 @@ import fs from 'fs'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true,
+    port: 3000,
     proxy: {
       "/api": {
         target: "https://revcn.azurewebsites.net",
