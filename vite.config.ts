@@ -6,12 +6,10 @@ import fs from 'fs'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
     proxy: {
       "/api": {
         target: "https://revcn.azurewebsites.net",
         changeOrigin: true,
-        secure: false,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
