@@ -1,5 +1,5 @@
 import axios from "axios";
-import { specialHouseMetricApi, totalHouseMetricApi, baseUrl } from "../constants/revcnApiUrl";
+import { specialHouseMetricApi, totalHouseMetricApi } from "../constants/revcnApiUrl";
 import { metric, metricType } from "../models/metric";
 import { revcnResponse } from "../models/revcnResponse";
 import { newIllegalResponse } from "../util/newIllegalResponse";
