@@ -53,4 +53,4 @@ jobs:
           app-name: 'revcn-web'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5534DF33073B4AD2AC3A8D1E0DAF29B2 }}
-          package: .
+          package: ./dist
