@@ -1,4 +1,4 @@
-export const baseUrl = import.meta.env.PROD ? "https://revcn.azurewebsites.net" : ""
+export const baseUrl = import.meta.env.PROD ? "http://server.revcn.net:4820" : ""
 
 export const totalHouseMetricsApi = "/api/metric/metrics/totalHouse";
 
