@@ -13,8 +13,9 @@ export default defineConfig(({mode}) => {
         server: {
           proxy: {
             "/api": {
-              target: "https://revcn.azurewebsites.net",
+              target: "https://server.revcn.net",
               changeOrigin: true,
+              secure: false
             }
           }
         }

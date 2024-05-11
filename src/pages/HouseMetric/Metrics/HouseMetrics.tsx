@@ -1,19 +1,19 @@
 import { FunctionComponent, useEffect, useState } from "react";
-import { getHouseMetrics } from "../../services/houseMetricsServices";
-import { metric, metricType } from "../../models/metric";
-import { statusCode } from "../../models/revcnResponse";
+import { getHouseMetrics } from "../../../services/houseMetricsServices";
+import { Metric, MetricType } from "../../../models/metric";
+import { statusCode } from "../../../models/revcnResponse";
 import Highcharts from 'highcharts';
 import { HighchartsReact } from "highcharts-react-official";
 import { useStyles } from "./HouseMetricsStyle";
 
 export const HouseMetrics: FunctionComponent = () => {
-    const [totalMetrics, setTotalMetrics] = useState<metric[]>([]);
-    const [specialMetrics, setSpecialMetrics] = useState<metric[]>([]);
+    const [totalMetrics, setTotalMetrics] = useState<Metric[]>([]);
+    const [specialMetrics, setSpecialMetrics] = useState<Metric[]>([]);
     const styles = useStyles();
 
     const onMount = async () => {
-        var totalHouseMetricTask = getHouseMetrics(metricType.HOUSE_AMOUNT_TOTAL);
-        var specialHouseMetricTask = getHouseMetrics(metricType.HOUSE_AMOUNT_SPECIAL);
+        var totalHouseMetricTask = getHouseMetrics(MetricType.HOUSE_AMOUNT_TOTAL);
+        var specialHouseMetricTask = getHouseMetrics(MetricType.HOUSE_AMOUNT_SPECIAL);
         var response = await totalHouseMetricTask;
         if (response.statusCode !== statusCode.Illegal && response.data !== null) {
             setTotalMetrics(response.data);
