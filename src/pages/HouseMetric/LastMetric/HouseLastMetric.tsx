@@ -4,7 +4,7 @@ import { Metric, MetricType } from "../../../models/metric";
 import { statusCode } from "../../../models/revcnResponse";
 import Highcharts from 'highcharts';
 import { HighchartsReact } from "highcharts-react-official";
-// import { useStyles } from "./HouseLastMetricStyle";
+import { useStyles } from "./HouseLastMetricStyle";
 import HighchartsMore from 'highcharts/highcharts-more.js';  
 import HighchartsSolidGauge from 'highcharts/modules/solid-gauge.js';  
 
@@ -15,7 +15,7 @@ HighchartsSolidGauge(Highcharts);
 export const HouseLastMetric: FunctionComponent = () => {
     const [totalHouseLastMetric, setTotalHouseLastMetric] = useState<Metric | null>(null);
     const [specialHouseLastMetric, setSpecialHouseLastMetric] = useState<Metric | null>(null);
-    // const styles = useStyles();
+    const styles = useStyles();
     const totalHouseAmount = 503;
     const specialHouseAmount = 50;
 
@@ -147,14 +147,20 @@ export const HouseLastMetric: FunctionComponent = () => {
         if (chartRef.current) {  
             (chartRef.current as any).chart.series[0].setData([value]);  
         }  
-    }, [value]);  
+    }, [value]);
+    
+    return(
+        <div className={styles.root}>
+            <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+        </div>
+    );
   
-    return (  
-        <HighchartsReact  
-            highcharts={Highcharts}  
-            options={chartOptions}  
-            constructorType={'chart'}  
-            ref={chartRef}  
-        />  
-    );  
+    // return (  
+    //     <HighchartsReact  
+    //         highcharts={Highcharts}  
+    //         options={chartOptions}  
+    //         constructorType={'chart'}  
+    //         ref={chartRef}  
+    //     />  
+    // );  
 }
