@@ -4,7 +4,7 @@ import { Metric, MetricType } from "../../../models/metric";
 import { statusCode } from "../../../models/revcnResponse";
 import Highcharts from 'highcharts';
 import { HighchartsReact } from "highcharts-react-official";
-import { useStyles } from "./HouseLastMetricStyle";
+// import { useStyles } from "./HouseLastMetricStyle";
 import HighchartsMore from 'highcharts/highcharts-more.js';  
 import HighchartsSolidGauge from 'highcharts/modules/solid-gauge.js';  
 
@@ -12,15 +12,10 @@ import HighchartsSolidGauge from 'highcharts/modules/solid-gauge.js';
 HighchartsMore(Highcharts);  
 HighchartsSolidGauge(Highcharts); 
 
-type GaugeChartProps = {  
-    title: string,  
-    value: number,  
-};  
-
 export const HouseLastMetric: FunctionComponent = () => {
     const [totalHouseLastMetric, setTotalHouseLastMetric] = useState<Metric | null>(null);
     const [specialHouseLastMetric, setSpecialHouseLastMetric] = useState<Metric | null>(null);
-    const styles = useStyles();
+    // const styles = useStyles();
     const totalHouseAmount = 503;
     const specialHouseAmount = 50;
 
